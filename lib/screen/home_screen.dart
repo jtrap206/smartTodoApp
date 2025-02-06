@@ -1,7 +1,10 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:new_todo/utils/extensions.dart';
 import 'package:gap/gap.dart';
 import 'package:new_todo/widgets/display_white_text.dart';
+import 'package:new_todo/widgets/common_containers.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -38,7 +41,7 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
           Positioned(
-            top: 170,
+            top: 130,
             left: 0,
             right: 0,
             child: SingleChildScrollView(
@@ -46,24 +49,39 @@ class HomeScreen extends StatelessWidget {
              padding: const EdgeInsets.all(20),
 
              child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Container(
-                  width: deviceSize.width,
-                  height: deviceSize.height * 0.3,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Colors.primaryContainer,
+                
+                
+                const Gap(20),
+
+                Text(
+                  'Completed',
+                  style: context.textTheme.headlineMedium,
                   ),
 
-                  child: ListView.builder(
-                    shrinkWrap: true,
-                    itemCount: 8,
-                    padding: EdgeInsets.zero,
-                    itemBuilder: (ctx, index){
-                      return const Text("under construction");
-                    }
+                  const Gap(20),
+                  CommonContainers(
+                    height: deviceSize.height * 0.25,
+                      child: ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: 8,
+                      padding: EdgeInsets.zero,
+                      itemBuilder: (ctx, index){
+                        return const Text('under construction');
+                      },
+
+                    ),
                   ),
-                )
+
+                  const Gap(20),
+                  ElevatedButton(
+                    onPressed: (){},
+                    child: const Padding(
+                      padding: EdgeInsets.all(8.0), 
+                    child: Text('Add New Task'),
+                    ),
+                  )
               ],
              ), 
             ),
