@@ -41,7 +41,7 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
           Positioned(
-            top: 130,
+            top: 150,
             left: 0,
             right: 0,
             child: SingleChildScrollView(
